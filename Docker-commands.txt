@@ -1,0 +1,14 @@
+
+# CMD line commands (not part of the Dockerfile)
+
+# remove all images without a repo (newly created). All containers using those images must be removed first.
+# docker image rm $(docker image ls -q -f dangling=true)
+
+# remove all containers
+# docker rm $(docker ps -a -q)
+
+# build docker image when Dockerfile is in current folder
+# docker build .
+
+# run the built image (host will listen on port 8888 and will redirect to port 8080 of container)
+docker run -p 8888:8080 0e8e2a6e52d3
